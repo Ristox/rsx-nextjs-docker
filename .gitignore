@@ -1,0 +1,12 @@
+.next
+node_modules
+*.log
+.DS_Store
+.env
+/dist
+/coverage
+.idea
+.vscode
+*.iml
+*.iws
+*.ipr
