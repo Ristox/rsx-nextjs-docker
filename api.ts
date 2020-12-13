@@ -21,12 +21,10 @@ router.get('/cpu-load-during/:ms', async (req:any, res:any) => {
   const delay = Math.min(9000, ms);
 
   console.time('cpu blocking...');
-   for (let t = 1; t < Math.ceil(delay/1000); t++) {
-      for (let i = 1; i < 2e9 ; i++);
-   }
+  for (let i = 1; i < (delay/1000) * 8e8 ; i++);
   console.timeEnd('cpu blocking...');
 
-  res.send(`Done simulating CPU load for about ${Math.ceil(delay/1000)} seconds`);
+  res.send(`Done simulating CPU load for about ${(delay/1000).toFixed(0)} seconds`);
 });
 
 router.get('/hello', async (req:any, res:any) => {
