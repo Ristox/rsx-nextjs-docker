@@ -4,7 +4,7 @@ import * as express from 'express';
 import * as next from 'next';
 import * as appInsights from 'applicationinsights';
 
-import api from './api';
+import { api } from './server';
 
 dotenv.config();
 const dev = process.env.NODE_ENV !== 'production';

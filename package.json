@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.ts",
+    "dev": "nodemon backend.ts",
     "build": "next build && tsc --project tsconfig.server.json",
     "postinstall": "npm run build",
-    "start": "NODE_ENV=production node .next/production-server/server.js",
+    "start": "NODE_ENV=production node .next/production-server/backend.js",
     "test": "mocha -r ts-node/register"
   },
   "keywords": [],
