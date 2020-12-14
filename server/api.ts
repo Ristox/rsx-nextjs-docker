@@ -1,6 +1,6 @@
 import * as express from 'express';
 
-import { Actions } from './actions/Actions';
+import { Actions } from './actions';
 
 const actions = new Actions();
 
