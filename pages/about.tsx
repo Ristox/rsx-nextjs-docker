@@ -1,7 +1,11 @@
 import Layout from '../components/MyLayout'
 
-export default () => (
-  <Layout>
-    <p>This is the about page</p>
-  </Layout>
-)
+const About = () => (
+
+    <Layout>
+      <p>This is the about page</p>
+    </Layout>
+
+);
+
+export default About;
