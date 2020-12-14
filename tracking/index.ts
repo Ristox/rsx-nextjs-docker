@@ -4,17 +4,17 @@ import { ReactPlugin, withAITracking } from '@microsoft/applicationinsights-reac
 import { createBrowserHistory } from 'history';
 
 
-const connectionString = process.env.AI_CONNECTION
+const instrumentationKey = process.env.APP_INSIGHTS;
 const reactPlugin = new ReactPlugin();
 const browserHistory = createBrowserHistory({basename: ''});
 
 const tracking = new ApplicationInsights({
   config: {
-    connectionString,
+    instrumentationKey,
     extensions: [reactPlugin],
     extensionConfig: {
       [reactPlugin.identifier]: { history: browserHistory }
-    }
+    },
   }
 })
 tracking.loadAppInsights();
