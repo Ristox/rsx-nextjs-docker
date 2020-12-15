@@ -24,7 +24,7 @@ api.get('/cpu-load-during/:ms', async (req:any, res:any) => {
   const delay = await actions.cpuLoadFor(ms);
   trackingClient.trackEvent({name: 'CPU Load - Actual', properties: {delayInSeconds: delay}});
 
-  res.send(`Done simulating CPU load for about ${delay} seconds`);
+  res.send(`Done simulating CPU load for ${delay} milliseconds`);
 });
 
 api.get('/hello', async (req:any, res:any) => {
