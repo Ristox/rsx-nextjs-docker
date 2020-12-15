@@ -4,6 +4,7 @@ import * as next from 'next';
 
 import { api } from './server';
 import { trackingClient } from "./server/tracking";
+import { AddressInfo } from "net";
 
 
 trackingClient.trackEvent({name: 'Startup...'});
@@ -18,12 +19,13 @@ const startServer = () => {
   server.get('/p/:id', (req, res) => nextApp.render(req, res, '/post', req.params));
   server.get('*', (req, res) => nextApp.handleRequest(req, res));
 
-  server.listen(port, (err) => {
+  const instance = server.listen(port, (err) => {
     if (err) {
       throw err;
     }
-    console.log(`Ready on http://localhost:${port}`);
-    console.log(`Using AppInsights Tracking: ${trackingClient.config}`);
+    const addr = instance.address() as AddressInfo;
+    console.log(`Server ready at ${addr.address}:${process.env.SERVICE_PORT || addr.port}`);
+    console.log(`Using AppInsights Tracking: ${JSON.stringify(trackingClient.config)}`);
     trackingClient.trackEvent({name: 'Startup Complete.'});
   });
 };
