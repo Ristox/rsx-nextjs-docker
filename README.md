@@ -1,4 +1,4 @@
-# Next.js + Typescript + Express
+# Next.js/Express + Typescript + Azure Application Insights
 
 ## with Docker build & application analytics/monitoring on AppInsights + NetData analytics/monitoring
 
