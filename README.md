@@ -15,10 +15,35 @@ APP_ROLE_NAME= #backend cloud role
 APP_INSTANCE_NAME= #server/vm cloud instance name
 ```
 
-#### Dev
+#### Dev server
 
 `npm i && npm run dev`
 
-#### Prod
+#### Prod server (host machine)
 
 `npm run build && npm start`
+
+#### Prod server (Docker-ized)
+
+`docker-compose up`
+
+Builds `rsx-nextjs-docker` service image (first run) and starts it in container with the same name.
+
+(Use flag `-d` to run in the background)
+
+**NB** - NextJS server running inside container is exposed for usage at host's port `8080`
+(open `http://localhost:8080/` or `http://localhost:8080/api`)
+
+#### Usage
+
+`/` - server root, serves a small sample NextJS app, with:
+
+* Main (index) page showing a TV shows listing from TV Maze API
+* All list items clickable, to display details view of chosen TV show.
+* Simple About page
+
+`/api` - server API root (Express backend), serves few endpoints to simulate timings/load of server:
+
+* `/api/hello` - fast response endpoint (just returns `hello` back at you)
+* `/api/delay/<ms>` - delay a response of given `ms` (or up to 9 seconds max)
+* `/api/cpu-load-during/<ms>` - generate CPU load for provided duration of given `ms` (or up to 25 seconds max). Essentially, does a nasty thing and blocks the server (main event loop).

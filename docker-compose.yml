@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+
+  nextjs:
+    expose:
+      - 3000
+    ports:
+      - 8080:3000
+    build:
+      context: .
+    image: rsx-nextjs-docker
+    container_name: rsx-nextjs-docker
+    environment:
+      - APP_INSIGHTS=${APP_INSIGHTS}
+      - FRONT_ROLE_NAME=${FRONT_ROLE_NAME}
+      - APP_ROLE_NAME=${APP_ROLE_NAME}
+      - APP_INSTANCE_NAME=${APP_INSTANCE_NAME}
+      - SERVICE_PORT=8080
