@@ -3,7 +3,6 @@
 ### with Docker build, Azure AppInsights analytics, NetData monitoring
 
 Some experimentation with a minimum Next.js/TS/Express and embedded app monitoring & analytics tools.
-Docker build to be added as well.
 
 #### Environment
 
@@ -31,10 +30,14 @@ Builds `rsx-nextjs-docker` service image (first run) and starts it in container 
 
 (Use flag `-d` to run in the background)
 
-**NB** - NextJS server running inside container is exposed for usage at host's port `8080`
-(open `http://localhost:8080/` or `http://localhost:8080/api`)
 
 #### Usage
+
+NextJS server, when ran natively, accepts requests on host's port `3000`
+(open `http://localhost:3000/` or `http://localhost:3000/api`)
+
+**NB** - NextJS server running inside container is exposed for usage at host's port `8080`
+(open `http://localhost:8080/` or `http://localhost:8080/api`)
 
 `/` - server root, serves a small sample NextJS app, with:
 

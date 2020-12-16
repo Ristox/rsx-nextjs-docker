@@ -1,17 +1,24 @@
-import App, { Container } from 'next/app';
-
+import App from 'next/app';
 import React from 'react';
+
 //import { withApplicationInsights } from 'next-applicationinsights';
 
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 
+    // React.useEffect(() => {
+    //   // Remove the server-side injected CSS.
+    //   const jssStyles = document.querySelector('#jss-server-side');
+    //   jssStyles?.parentElement?.removeChild(jssStyles);
+    // }, []);
+
     return (
-      <Container>
+
+
         <Component {...pageProps} />
-      </Container>
-    );
+
+  );
   }
 
   componentDidMount() {
