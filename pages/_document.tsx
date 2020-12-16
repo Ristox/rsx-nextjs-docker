@@ -1,9 +1,6 @@
 import React from 'react';
-// Modules
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-// MUI Core
 import { ServerStyleSheets } from '@material-ui/core/styles';
-// Utils
 import theme from '../utils/theme';
 
 class MyDocument extends Document {
@@ -23,8 +20,6 @@ class MyDocument extends Document {
   }
 }
 
-// `getInitialProps` belongs to `_document` (instead of `_app`),
-// it's compatible with server-side generation (SSG).
 MyDocument.getInitialProps = async (ctx) => {
   // Resolution order
   //
@@ -48,7 +43,6 @@ MyDocument.getInitialProps = async (ctx) => {
   // 3. app.render
   // 4. page.render
 
-  // Render app and page and get the context of the page with collected side effects.
   const sheets = new ServerStyleSheets();
   const originalRenderPage = ctx.renderPage;
 
