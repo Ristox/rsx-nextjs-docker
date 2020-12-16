@@ -1,4 +1,4 @@
-import * as express from 'express';
+import express from 'express';
 
 import { Actions } from './actions';
 import { trackingClient } from './tracking';

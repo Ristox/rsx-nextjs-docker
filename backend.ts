@@ -1,6 +1,6 @@
-import * as express from 'express';
+import express from 'express';
 
-import * as next from 'next';
+import next from 'next';
 
 import { api } from './server';
 import { trackingClient } from "./server/tracking";
@@ -17,12 +17,10 @@ const startServer = () => {
   const server = express();
   server.use('/api', api);
   server.get('/p/:id', (req, res) => nextApp.render(req, res, '/post', req.params));
-  server.get('*', (req, res) => nextApp.handleRequest(req, res));
+  const nextRequestHandler = nextApp.getRequestHandler();
+  server.get('*', (req, res) => nextRequestHandler(req, res));
 
-  const instance = server.listen(port, (err) => {
-    if (err) {
-      throw err;
-    }
+  const instance = server.listen(port, () => {
     const addr = instance.address() as AddressInfo;
     console.log(`Server ready at ${addr.address}:${process.env.SERVICE_PORT || addr.port}`);
     console.log(`Using AppInsights Tracking: ${JSON.stringify(trackingClient.config)}`);

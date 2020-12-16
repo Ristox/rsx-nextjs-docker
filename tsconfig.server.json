@@ -5,6 +5,9 @@
     "module": "commonjs",
     "outDir": ".next/production-server/"
   },
+  "ts-node": {
+    "typeCheck": true
+  },
   "include": ["**/*.ts"],
   "exclude": ["test/**/*.ts"]
 }
