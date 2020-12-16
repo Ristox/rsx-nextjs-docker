@@ -16,7 +16,7 @@ const startServer = () => {
 
   const server = express();
   server.use('/api', api);
-  server.get('/p/:id', (req, res) => nextApp.render(req, res, '/post', req.params));
+  server.get('/show/:id', (req, res) => nextApp.render(req, res, '/showDetails', req.params));
   const nextRequestHandler = nextApp.getRequestHandler();
   server.get('*', (req, res) => nextRequestHandler(req, res));
 
