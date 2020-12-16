@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
     "@microsoft/applicationinsights-react-js": "^3.0.5",
     "@microsoft/applicationinsights-web": "^2.5.10",
     "@types/chai": "^4.2.14",
