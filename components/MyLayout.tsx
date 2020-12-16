@@ -9,7 +9,7 @@ const layoutStyle = {
 
 const contentStyle = {
   marginLeft: 100,
-  marginBottom: 20,
+  marginBottom: 15,
 }
 
 const Layout = (props) => (
