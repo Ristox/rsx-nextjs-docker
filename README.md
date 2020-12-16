@@ -1,10 +1,13 @@
 # Next.js/Express + Typescript + Azure Application Insights
 
-### with Docker build, Azure AppInsights analytics, NetData monitoring
+Some experimentation with a minimum NextJS/TS/Express app, with monitoring & analytics instrumentation
 
-Some experimentation with a minimum Next.js/TS/Express and embedded app monitoring & analytics tools.
+* NextJS frontend (at `/`) bundled together with Express server backend (at `/api`)
+* Docker Compose build
+* Azure Application Insights analytics/monitoring instrumentation
 
-#### Environment
+
+## Environment
 
 Copy `.env.example` to `.env` and fill your proprietary configuration to the environment variables
 ```
@@ -31,7 +34,7 @@ Builds `rsx-nextjs-docker` service image (first run) and starts it in container 
 (Use flag `-d` to run in the background)
 
 
-#### Usage
+## Usage
 
 NextJS server, when ran natively, accepts requests on host's port `3000`
 (open `http://localhost:3000/` or `http://localhost:3000/api`)
